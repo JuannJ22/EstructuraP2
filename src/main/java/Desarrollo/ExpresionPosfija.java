@@ -1,11 +1,11 @@
 package Desarrollo;
 import estructuras.Pila;
 
-/** Punto 1 (segunda parte): pasar de infija a posfija y evaluar con una pila. */
+
 public class ExpresionPosfija {
     private ExpresionPosfija() {
     }
-    /** Convierte una expresión infija a posfija. Los símbolos van separados por espacios. */
+   
     public static String aPosfija(String infija) {
         Pila<String> operadores = new Pila<>();
         StringBuilder salida = new StringBuilder();
@@ -16,7 +16,7 @@ public class ExpresionPosfija {
                 while (!operadores.verTope().equals("(")) {
                     salida.append(operadores.desapilar()).append(' ');
                 }
-                operadores.desapilar(); // se descarta el "("
+                operadores.desapilar(); 
             } else if (esOperador(simbolo)) {
                 while (!operadores.estaVacia() && esOperador(operadores.verTope())
                         && prioridad(operadores.verTope()) >= prioridad(simbolo)) {
@@ -24,7 +24,7 @@ public class ExpresionPosfija {
                 }
                 operadores.apilar(simbolo);
             } else {
-                salida.append(simbolo).append(' '); // operando: va directo a la salida
+                salida.append(simbolo).append(' '); 
             }
         }
         while (!operadores.estaVacia()) {
@@ -32,7 +32,7 @@ public class ExpresionPosfija {
         }
         return salida.toString().trim();
     }
-    /** Cambia cada variable (A, B, C, D) de la expresión posfija por su valor. */
+  
     public static String reemplazar(String posfija, double a, double b, double c, double d) {
         StringBuilder sb = new StringBuilder();
         for (String simbolo : posfija.split("\\s+")) {
@@ -47,7 +47,7 @@ public class ExpresionPosfija {
         }
         return sb.toString().trim();
     }
-    /** Evalúa una expresión posfija con una pila e imprime la tabla paso a paso. */
+    
     public static double evaluar(String posfija) {
         Pila<Double> pila = new Pila<>();
         System.out.printf("%-4s %-8s %-28s %s%n", "Paso", "Elemento", "Operación",
@@ -56,8 +56,7 @@ public class ExpresionPosfija {
         for (String simbolo : posfija.split("\\s+")) {
             String operacion;
             if (esOperador(simbolo)) {
-                double derecho = pila.desapilar(); // el primero que sale es el operando
-                // derecho
+                double derecho = pila.desapilar(); 
                 double izquierdo = pila.desapilar();
                 double resultado = operar(izquierdo, derecho, simbolo);
                 pila.apilar(resultado);
@@ -85,7 +84,7 @@ public class ExpresionPosfija {
             default: return a / b;
         }
     }
-    /** 6.0 se muestra como 6 y 4.5 como 4.5 */
+
     public static String formatear(double numero) {
         return numero == Math.floor(numero) ? String.valueOf((long) numero)
                 : String.valueOf(numero);
