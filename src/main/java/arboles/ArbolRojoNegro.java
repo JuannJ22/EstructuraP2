@@ -41,7 +41,7 @@ public class ArbolRojoNegro {
             padre.derecho = x;
         }
 
-        reajustar(x)
+        reajustar(x);
     }
 
     private void reajustar(NodoRN x) {

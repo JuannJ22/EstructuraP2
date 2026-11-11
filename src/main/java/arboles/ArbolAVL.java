@@ -86,7 +86,7 @@ public class ArbolAVL {
                 System. out.println(" FE(" + nodo.dato + ") = +2 > rotación simple a la izquierda");
             return rotarIzquierda (nodo);
             }
-            System. out. println(" FE(" + nodo.dato + ") = +2 y FE(" + nodo.derecho.dato + ") = -1 -> rotación doble a la derecha")
+            System. out. println(" FE(" + nodo.dato + ") = +2 y FE(" + nodo.derecho.dato + ") = -1 -> rotación doble a la derecha");
             nodo.derecho = rotarDerecha(nodo.derecho);
             return rotarIzquierda(nodo);
         }
