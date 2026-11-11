@@ -1,8 +1,6 @@
 package estructuras;
-/**
- * Cola propia (FIFO) hecha con nodos enlazados.
- * Se agrega por el final (encolar) y se retira por el frente (desencolar).
- */
+
+ 
 public class Cola<T> {
     private static class Nodo<T> {
         T valor;
@@ -13,8 +11,8 @@ public class Cola<T> {
         }
     }
 
-    private Nodo<T> inicio; // frente
-    private Nodo<T> fin; // final
+    private Nodo<T> inicio; 
+    private Nodo<T> fin;
     private int tamanio;
 
     public void encolar(T valor) {
@@ -56,9 +54,7 @@ public class Cola<T> {
         return tamanio;
     }
 
-    /**
-     * Muestra la cola desde el frente hasta el final (recursivo, sin ciclos).
-     */
+    
     @Override
     public String toString() {
         return "[" + recorrer(inicio) + "]";

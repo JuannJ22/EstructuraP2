@@ -1,8 +1,5 @@
 package estructuras;
-/**
- * Pila propia (LIFO) hecha con nodos enlazados.
- * Solo se puede trabajar por el tope: apilar, desapilar y verTope.
- */
+
 public class Pila<T> {
     private static class Nodo<T> {
         T valor;
@@ -46,7 +43,7 @@ public class Pila<T> {
         return tamanio;
     }
 
-    /** Muestra la pila desde el tope hasta el fondo. */
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");

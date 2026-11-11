@@ -3,7 +3,7 @@ package model;
 public class Paquete {
     private final String codigo;
     private final TipoEntrega tipo;
-    private final int peso; // kg
+    private final int peso; 
     public Paquete(String codigo, TipoEntrega tipo, int peso) {
         if (peso <= 0) {
             throw new IllegalArgumentException("El peso debe ser positivo");
